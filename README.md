@@ -13,13 +13,12 @@ composer require wll/oauth-qq
 Wll\OauthQq\OauthProvider::class,
 ```
 
-
 3、 发布配置文件在config目录下面
 ```bash
 php artisan vendor:publish
 ```
 
-4. 修改：config/oauth-qq.php
+4、修改：config/oauth-qq.php
 ```php
 
 return   [
@@ -33,7 +32,6 @@ return   [
 ];
 
 ```
-
 
 
 5、开始使用 - 授权控制器中写
@@ -51,6 +49,7 @@ Oauth::oauth($request)
 6、获取缓存中的授权数据-回调控制器中写
 ```php
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use Wll\OauthQq\Facades\Oauth;	
 
@@ -66,6 +65,7 @@ $qqUserInfo=Oauth::getUserInfoByCode($code);
 
 //通过state获取qq授权时传的参数
 $qqAauthParam = Cache::get('qq:oauth:state:' . $state);
+
 //print_r($qqAauthParam);
 
 //以下就可以写用户注册数据库逻辑......
