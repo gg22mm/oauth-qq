@@ -1,0 +1,22 @@
+{
+    "name": "wll/oauth-qq",
+    "type": "library",
+	"description": "laravel-oauth-qq",
+    "require": {
+        "php": ">=7.0"
+    },
+	"keywords":["laravel-oauth-qq","laravel"],
+    "license":"MIT",
+    "authors": [
+        {
+            "name": "gg22mm",
+            "email": "gg22mm@qq.com"
+        }
+    ],
+	"autoload": {
+		"psr-4": {
+			"Wll\\OauthQq\\": "src"
+		}
+	},
+    "minimum-stability": "dev"
+}
